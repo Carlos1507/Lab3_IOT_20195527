@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragmentos.EmergenciaFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="50dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical" >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/nombreEmergencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergencia"
+                    android:textColor="@color/rojoEmergencia"
+                    android:textStyle="bold"
+                    android:textSize="27sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/labelorigen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Origen"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nombreEmergencia" />
+                <Spinner
+                    android:id="@+id/editTextorigen"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:entries="@array/origenes"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/labelorigen"
+                    app:layout_constraintBottom_toBottomOf="@id/labelorigen"/>
+                <TextView
+                    android:id="@+id/labeldestino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Destino"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="@id/labelorigen"
+                    app:layout_constraintEnd_toEndOf="@id/labelorigen"
+                    app:layout_constraintTop_toBottomOf="@id/labelorigen" />
+                <TextView
+                    android:id="@+id/editTextdestino"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:text="Lince"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/editTextorigen"
+                    app:layout_constraintEnd_toEndOf="@id/editTextorigen"
+                    app:layout_constraintTop_toTopOf="@id/labeldestino"
+                    app:layout_constraintBottom_toBottomOf="@id/labeldestino"/>
+                <Button
+                    android:id="@+id/botonCalcular"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Calcular"
+                    android:layout_marginTop="50dp"
+                    android:backgroundTint="@color/rojoEmergencia"
+                    app:layout_constraintTop_toBottomOf="@id/labeldestino"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/contador"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="00:00"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintTop_toBottomOf="@id/botonCalcular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/minutos"/>
+                <TextView
+                    android:id="@+id/minutos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="60dp"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="150dp"
+                    app:layout_constraintTop_toBottomOf="@id/botonCalcular"
+                    app:layout_constraintStart_toEndOf="@id/contador"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="minutos" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

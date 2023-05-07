@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragmentos.RegistroFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="50dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical" >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/nombreRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registro"
+                    android:textColor="@color/amarilloBorde"
+                    android:textStyle="bold"
+                    android:textSize="27sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="50dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/labelmascotanombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre Mascota"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nombreRegistro" />
+                <EditText
+                    android:id="@+id/editTextnombreMascota"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/labelmascotanombre"
+                    app:layout_constraintBottom_toBottomOf="@id/labelmascotanombre"/>
+                <TextView
+                    android:id="@+id/labelgenero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Género"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toStartOf="@id/labelmascotanombre"
+                    app:layout_constraintEnd_toEndOf="@id/labelmascotanombre"
+                    app:layout_constraintTop_toBottomOf="@id/labelmascotanombre" />
+                <Spinner
+                    android:id="@+id/spinnergenero"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteX="1dp"
+                    tools:layout_editor_absoluteY="82dp"
+                    app:layout_constraintStart_toStartOf="@id/editTextnombreMascota"
+                    app:layout_constraintEnd_toEndOf="@id/editTextnombreMascota"
+                    app:layout_constraintTop_toTopOf="@id/labelgenero"
+                    app:layout_constraintBottom_toBottomOf="@id/labelgenero"
+                    android:entries="@array/genero"
+                    />
+                <TextView
+                    android:id="@+id/labelnombredueno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre Dueño"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toStartOf="@id/labelgenero"
+                    app:layout_constraintEnd_toEndOf="@id/labelgenero"
+                    app:layout_constraintTop_toBottomOf="@id/labelgenero" />
+                <EditText
+                    android:id="@+id/nombredueno"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintStart_toStartOf="@id/spinnergenero"
+                    app:layout_constraintEnd_toEndOf="@id/spinnergenero"
+                    app:layout_constraintTop_toTopOf="@id/labelnombredueno"
+                    app:layout_constraintBottom_toBottomOf="@id/labelnombredueno"/>
+                <TextView
+                    android:id="@+id/labeldni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DNI"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toStartOf="@id/labelnombredueno"
+                    app:layout_constraintEnd_toEndOf="@id/labelnombredueno"
+                    app:layout_constraintTop_toBottomOf="@id/labelnombredueno" />
+                <EditText
+                    android:id="@+id/editTextdni"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintStart_toStartOf="@id/nombredueno"
+                    app:layout_constraintEnd_toEndOf="@id/nombredueno"
+                    app:layout_constraintTop_toTopOf="@id/labeldni"
+                    app:layout_constraintBottom_toBottomOf="@id/labeldni"/>
+                <TextView
+                    android:id="@+id/labeldescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toStartOf="@id/labeldni"
+                    app:layout_constraintEnd_toEndOf="@id/labeldni"
+                    app:layout_constraintTop_toBottomOf="@id/labeldni" />
+                <EditText
+                    android:id="@+id/editTextdescripcion"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintStart_toStartOf="@id/editTextdni"
+                    app:layout_constraintEnd_toEndOf="@id/editTextdni"
+                    app:layout_constraintTop_toTopOf="@id/labeldescripcion"
+                    app:layout_constraintBottom_toBottomOf="@id/labeldescripcion"/>
+                <Button
+                    android:id="@+id/botonRegistro"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Registro"
+                    android:layout_marginTop="60dp"
+                    android:backgroundTint="@color/amarilloRegistro"
+                    app:layout_constraintTop_toTopOf="@id/labeldescripcion"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
