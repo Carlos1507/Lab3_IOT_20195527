@@ -47,7 +47,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/nombreEmergencia" />
                 <Spinner
-                    android:id="@+id/editTextorigen"
+                    android:id="@+id/origen"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -77,8 +77,8 @@
                     android:textSize="17sp"
                     android:paddingStart="10dp"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/editTextorigen"
-                    app:layout_constraintEnd_toEndOf="@id/editTextorigen"
+                    app:layout_constraintStart_toStartOf="@id/origen"
+                    app:layout_constraintEnd_toEndOf="@id/origen"
                     app:layout_constraintTop_toTopOf="@id/labeldestino"
                     app:layout_constraintBottom_toBottomOf="@id/labeldestino"/>
                 <Button
@@ -120,6 +120,18 @@
                     app:layout_constraintStart_toEndOf="@id/contador"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:text="minutos" />
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    xmlns:map="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/map"
+                    map:cameraZoom="13"
+                    android:layout_marginTop="10dp"
+                    tools:context=".MapsActivity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/minutos"
+                    android:name="com.google.android.gms.maps.SupportMapFragment" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
