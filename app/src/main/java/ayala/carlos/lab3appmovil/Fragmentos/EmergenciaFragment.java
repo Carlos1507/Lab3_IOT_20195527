@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -39,6 +41,11 @@ public class EmergenciaFragment extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentEmergenciaBinding.inflate(inflater, container, false);
+
+        NavController navController = NavHostFragment.findNavController(EmergenciaFragment.this);
+        binding.botonAtras.setOnClickListener(view -> {
+            navController.navigate(R.id.action_emergenciaFragment_to_principalFragment);
+        });
 
         HashMap<String, Integer> tiempos = new HashMap<>();
         tiempos.put("Lince",10);
@@ -80,7 +87,7 @@ public class EmergenciaFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng origenLatLng = new LatLng(-12.084538, -77.031396);
+        LatLng origenLatLng;
         if(origen.equals("Lince")){
             origenLatLng = new LatLng(-12.086760, -77.033885);
         }else if(origen.equals("Jesús María")){

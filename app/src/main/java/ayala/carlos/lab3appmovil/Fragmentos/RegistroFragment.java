@@ -31,6 +31,11 @@ public class RegistroFragment extends Fragment {
 
 
         NavController navController = NavHostFragment.findNavController(RegistroFragment.this);
+
+        binding.botonAtras.setOnClickListener(view -> {
+            navController.navigate(R.id.action_registroFragment_to_principalFragment);
+        });
+
         binding.botonRegistro.setOnClickListener(view -> {
 
             RegistroMascota mascota = mainViewModel.getMascota().getValue();

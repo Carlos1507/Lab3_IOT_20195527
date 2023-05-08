@@ -35,6 +35,17 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/botonAtras"
+                    android:layout_width="39dp"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="30dp"
+                    android:clickable="true"
+                    android:src="@drawable/atras"
+                    app:layout_constraintBottom_toBottomOf="@+id/nombreRegistro"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/nombreRegistro" />
+
                 <TextView
                     android:id="@+id/labelmascotanombre"
                     android:layout_width="wrap_content"

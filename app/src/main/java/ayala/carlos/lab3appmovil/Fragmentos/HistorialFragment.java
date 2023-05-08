@@ -3,6 +3,8 @@ package ayala.carlos.lab3appmovil.Fragmentos;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -16,6 +18,7 @@ import ayala.carlos.lab3appmovil.Adapters.HistorialAdapter;
 import ayala.carlos.lab3appmovil.Beans.RegistroMascota;
 import ayala.carlos.lab3appmovil.Dto.RegistroHistorialDto;
 import ayala.carlos.lab3appmovil.MainActivity;
+import ayala.carlos.lab3appmovil.R;
 import ayala.carlos.lab3appmovil.databinding.FragmentHistorialBinding;
 
 public class HistorialFragment extends Fragment {
@@ -25,6 +28,12 @@ public class HistorialFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentHistorialBinding.inflate(inflater, container, false);
+
+        NavController navController = NavHostFragment.findNavController(HistorialFragment.this);
+        binding.botonAtras.setOnClickListener(view -> {
+            navController.navigate(R.id.action_historialFragment_to_principalFragment);
+        });
+
 
         List<RegistroHistorialDto> listaRegistros = new ArrayList<>();
 
